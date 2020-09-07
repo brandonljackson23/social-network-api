@@ -13,7 +13,7 @@ const {
 // route to get all thoughts
 router.route('/').get(getAllThought);
 // route to add thought
-router.route('/:UserId').post(addThought);
+router.route('/:userId').post(addThought);
 // route to get one, update and delete a thought 
 router
   .route('/:id')
@@ -24,6 +24,6 @@ router
 router
   .route('/:thoughtId/reactions').post(addReaction);
 // Route to delete a reaction
-router.route('/:userId/:thoughtId/:reactionId').delete(removeReaction);
+router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction);
 
 module.exports = router;

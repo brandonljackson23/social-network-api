@@ -35,7 +35,6 @@ const thoughtController = {
   },
   // ADD thought to user
   addThought({ params, body }, res) {
-    console.log(body);
     Thought.create(body)
       .then(({ _id }) => {
         return User.findOneAndUpdate(
