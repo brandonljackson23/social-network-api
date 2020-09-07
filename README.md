@@ -20,7 +20,7 @@ The purpose of this API is to allow users to share their thoughts, create a frie
 
 ## APPLICATION LINKS
 [GitHub Repo](https://github.com/brandonljackson23/social-network-api)  
-Walkthrough Video: [Demo]()  
+Walkthrough Videos: [Demo Part 1](https://youtu.be/uOhTt0WqfO0) [Demo Part 2](https://youtu.be/xSSTOAI6uv8) 
 
 ---
 
@@ -57,6 +57,8 @@ All API Routes were tested using Insomnia
 ---
 
 ## DEMO VIDEO  
-Click on the image below to watch a short demo video that illustrates how the tool works.
+Click on the images below to watch a short demo video that illustrates how the tool works.
 
-[![Demo Video]()]()
+[![Demo Video Part 1](./assets/images/part1-thumbnail.PNG)](https://youtu.be/uOhTt0WqfO0)  
+
+[![Demo Video Part 2](./assets/images/part2-thumbnail.PNG)](https://youtu.be/xSSTOAI6uv8)
