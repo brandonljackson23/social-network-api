@@ -1,24 +1,31 @@
 const { Schema, model } = require('mongoose');
-const moment = require('moment');
 
-const UserSchema = new Schema({
-    UserName: {
-      type: String
+const UserSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: 'Please provide a username.',
+      trim: true,
+      unique: true
     },
-    createdBy: {
-      type: String
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/]
     },
     thoughts: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Thought'
       }
-    ]
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ],
   },
   {
     toJSON: {
@@ -29,9 +36,9 @@ const UserSchema = new Schema({
   }
 );
 
-// get total count of thoughts and replies on retrieval
-UserSchema.virtual('thoughtCount').get(function() {
-  return this.thoughts.length;
+// get total count of friends in friends array
+UserSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
 });
 
 // create the User model using the UserSchema
